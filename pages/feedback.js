@@ -1,33 +1,33 @@
-import React from 'react';
-import {
-  Button,
-  TextareaItem,
-  List,
-  WhiteSpace,
-  WingBlank,
-} from '@ant-design/react-native';
-import {StatusBar} from 'react-native';
+import React, { useState } from 'react';
+import { View, StyleSheet } from 'react-native';
+import { AnimatedFAB } from 'react-native-paper';
 
-function FeedbackPage() {
+export default () => {
+    const [isExtended, setIsExtended] = useState(true);
+
   return (
     <>
-      <StatusBar barStyle="dark-content" />
-      <WhiteSpace />
-      <List>
-        <TextareaItem
-          placeholder="请输入不少于10个字的描述"
-          rows={5}
-          count={300}
-        />
-      </List>
-      <WhiteSpace size="lg" />
-      <WingBlank size="lg">
-        <Button type="primary">提交</Button>
-      </WingBlank>
+      <AnimatedFAB
+        icon={'plus'}
+        label={'Label'}
+        extended={isExtended}
+        onPress={() => console.log('Pressed')}
+        visible={true}
+        animateFrom={'right'}
+        iconMode={'static'}
+        style={[styles.fabStyle]}
+      />
     </>
   );
-}
+};
 
-FeedbackPage.title = '产品建议';
-
-export default FeedbackPage;
+const styles = StyleSheet.create({
+  container: {
+    flexGrow: 1,
+  },
+  fabStyle: {
+    bottom: 16,
+    right: 16,
+    position: 'absolute',
+  },
+});

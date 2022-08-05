@@ -1,20 +1,20 @@
 import React from 'react';
-import {StatusBar} from 'react-native';
-import {Icon} from '@ant-design/react-native';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import { StatusBar } from 'react-native';
+import { Icon } from '@ant-design/react-native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from '../tabs/HomeScreen';
 import ProfileScreen from '../tabs/ProfileScreen';
-const {Navigator, Screen} = createBottomTabNavigator();
+const { Navigator, Screen } = createBottomTabNavigator();
 
 function IndexPage() {
   return (
     <>
-      <StatusBar barStyle="dark-content" />
+      <StatusBar animated={true} translucent={true} />
       <Navigator>
         <Screen
           name="主页"
-          options={({route}) => ({
-            tabBarIcon: ({focused, color, size}) => {
+          options={({ route }) => ({
+            tabBarIcon: ({ focused, color, size }) => {
               // You can return any component that you like here!
               return <Icon size={size} name="home" color={color} />;
             },
@@ -22,9 +22,9 @@ function IndexPage() {
           component={HomeScreen}
         />
         <Screen
-          name="我的"
-          options={({route}) => ({
-            tabBarIcon: ({focused, color, size}) => {
+          name="个人"
+          options={({ route }) => ({
+            tabBarIcon: ({ focused, color, size }) => {
               // You can return any component that you like here!
               return <Icon size={size} name="profile" color={color} />;
             },
@@ -35,14 +35,13 @@ function IndexPage() {
     </>
   );
 }
-
-IndexPage.title = '首页';
-IndexPage.headerTintColor = '#ffffff';
-IndexPage.headerTitleStyle = {
-  fontWeight: 'bold',
-};
+// IndexPage.headerLeft = '首页';
+// IndexPage.headerTintColor = '#ccc';
+// IndexPage.headerTitleStyle = {
+//   fontWeight: 'bold',
+// };
 IndexPage.headerStyle = {
-  backgroundColor: '#000000',
+  backgroundColor: '#e5f4ff',
 };
 
 export default IndexPage;
