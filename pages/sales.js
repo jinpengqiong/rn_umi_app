@@ -7,8 +7,8 @@ import RadioGroup from 'react-native-custom-radio-group';
 
 
 const SalesComponent = () => {
-  const [value, setValue] = useState('first');
-  const [selectedOptions, setSelectedOptions] = useState([])
+  const [value, setValue] = useState('Second');
+  const [selectedOption, setSelectedOption] = useState('transport_bike');
   const radioGroupList = [
     {
       label: '拆分',
@@ -44,7 +44,7 @@ const SalesComponent = () => {
               clear
               // value={this.state.value}
               onChange={(value) => {}}
-              extra={<Text style={{ color: 'gold', fontSize: 20 }}>全部</Text>}
+              extra={<Text style={{ fontSize: 13, color: '#B58E4F' }}>全部</Text>}
               onExtraClick={() => {}}
               placeholder="请输入金额"
               type="number"
@@ -61,7 +61,8 @@ const SalesComponent = () => {
             <Text style={{ fontSize: 15 }}>出售方式：</Text>
             <RadioGroup
               radioGroupList={radioGroupList}
-              onChange={setSelectedOptions}
+              initialValue={selectedOption}
+              onChange={setSelectedOption}
               containerStyle={{ display: 'flex', justifyContent: 'space-between', flexDirection: 'row', width: 170 }}
               buttonContainerStyle={{ borderWidth: 0, width: 80, height: 40 }}
               buttonContainerActiveStyle={{ borderWidth: 0, width: 80, height: 40 }}
@@ -89,5 +90,5 @@ const SalesComponent = () => {
     </ScrollView>
   );
 };
-
+SalesComponent.title = '出售';
 export default SalesComponent;
