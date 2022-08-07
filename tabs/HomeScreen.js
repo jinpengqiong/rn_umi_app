@@ -5,9 +5,9 @@ import { useSelector, history } from 'umi';
 import { Avatar } from 'react-native-paper';
 
 const data2 = [
-  { name: '我的挂单', icon: 'https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png', path: '/sales' },
-  { name: '我的订单', icon: 'https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png', path: '/feedback' },
-  { name: '钱包记录', icon: 'https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png', path: '/images' },
+  { name: '我的挂单', icon: 'https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png', path: '/myList' },
+  { name: '我的订单', icon: 'https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png', path: '/myOrder' },
+  { name: '钱包记录', icon: 'https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png', path: '/walletRecords' },
   { name: '收付款信息', icon: 'https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png', path: '/feedback' },
   { name: '帮助', icon: 'https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png', path: '/feedback' },
   { name: '客服', icon: 'https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png', path: '/feedback' },
@@ -100,7 +100,7 @@ export default function HomeScreen() {
         <View style={{ backgroundColor: '#fff' }}>
           <Grid data={data2} columnNum={3} hasLine={false} onPress={handlePress} itemStyle={{ fontSize: 100 }} />
         </View>
-        {/* <Image source={require('../assets/images/icon_collection@3x.png')} /> */}
+        <Image source={{ uri: 'https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png' }} />
       </ScrollView>
     </>
   );
