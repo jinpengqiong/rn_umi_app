@@ -1,9 +1,18 @@
 import React, { useState } from 'react';
-import { ScrollView, Text, View, TouchableOpacity } from 'react-native';
+import { ScrollView, Text, View, RefreshControl } from 'react-native';
 import { InputItem, WingBlank, Flex, WhiteSpace, Button, Modal } from '@ant-design/react-native';
 import { Avatar } from 'react-native-paper';
 
 const MyOrderComponent = () => {
+  const [refresh, setRefresh] = useState(false);
+  const handleRefresh = () => {
+    console.log('handleRefresh triggered');
+    setRefresh(true);
+    setTimeout(() => {
+      setRefresh(false);
+      console.log('handleRefresh ended');
+    }, 2000);
+  };
   const data = [
     {
       success: true,
@@ -28,6 +37,7 @@ const MyOrderComponent = () => {
     <>
       <ScrollView
         style={{ flex: 1, backgroundColor: '#F2F6F9' }}
+        refreshControl={<RefreshControl refreshing={refresh} onRefresh={handleRefresh} />}
         automaticallyAdjustContentInsets={false}
         showsHorizontalScrollIndicator={false}
         showsVerticalScrollIndicator={false}

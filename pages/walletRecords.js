@@ -1,9 +1,18 @@
 import React, { useState } from 'react';
-import { ScrollView, Text, View, TouchableOpacity } from 'react-native';
+import { ScrollView, Text, View, RefreshControl } from 'react-native';
 import { InputItem, WingBlank, Flex, WhiteSpace, Button, Modal } from '@ant-design/react-native';
 import { Avatar } from 'react-native-paper';
 
 const WalletRecordsComponent = () => {
+  const [refresh, setRefresh] = useState(false);
+  const handleRefresh = () => {
+    console.log('handleRefresh triggered');
+    setRefresh(true);
+    setTimeout(() => {
+      setRefresh(false);
+      console.log('handleRefresh ended');
+    }, 2000);
+  };
   const data = [
     {
       success: true,
@@ -28,6 +37,7 @@ const WalletRecordsComponent = () => {
     <>
       <ScrollView
         style={{ flex: 1, backgroundColor: '#F2F6F9' }}
+        refreshControl={<RefreshControl refreshing={refresh} onRefresh={handleRefresh} />}
         automaticallyAdjustContentInsets={false}
         showsHorizontalScrollIndicator={false}
         showsVerticalScrollIndicator={false}
@@ -39,7 +49,7 @@ const WalletRecordsComponent = () => {
               <View style={{ position: 'relative', marginTop: 10, height: 92, borderRadius: 8, backgroundColor: '#FFFFFF' }} key={index}>
                 <WingBlank size="lg">
                   <Flex justify="between" style={{ marginTop: 20 }}>
-                    <Flex align='start'>
+                    <Flex align="start">
                       <Avatar.Icon size={30} icon="account" style={{ marginRight: 10 }} />
                       <Flex direction="column" align="start">
                         <Text style={{ fontWeight: '600', fontSize: 15, color: '#06060A', marginBottom: 5 }}>转帐入</Text>

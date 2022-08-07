@@ -78,7 +78,7 @@ export default function HomeScreen() {
               <TouchableOpacity
                 activeOpacity={0.5}
                 onPress={() => {
-                  history.push('/buy');
+                  history.push('/market');
                 }}
               >
                 <Text style={{ backgroundColor: '#E2F7F0', height: 40, lineHeight: 40, textAlign: 'center', color: '#35CE9A' }}>购买</Text>
