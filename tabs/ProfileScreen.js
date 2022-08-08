@@ -13,7 +13,7 @@ export default function ProfileScreen() {
     });
   }
   const images = {
-    src: require('../assets/images/icon_bank.png'),
+    src: require('../assets/images/icon_walletaddress.png'),
   };
   return (
     <ScrollView style={{ backgroundColor: '#e5f4ff' }}>
@@ -45,11 +45,14 @@ export default function ProfileScreen() {
           用户须知
         </Link>
       </List>
-      <Image source={images.src} style={{ color: '#ccc',width: 100 }} />
+      {/* <Image source={images.src} /> */}
       <WingBlank>
-        <Button type="primary" onPress={handlePress}>
-          退出登录
-        </Button>
+        <Flex direction="column">
+          <Button type="primary" onPress={handlePress} style={{ width: '90%' }}>
+            退出登录
+          </Button>
+          <Text style={{ fontWeight:"500", fontSize: 12, color:"#9497A0", marginTop: 10 }}>版本号： 2.5.6</Text>
+        </Flex>
       </WingBlank>
     </ScrollView>
   );
