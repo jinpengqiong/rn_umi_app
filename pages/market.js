@@ -86,5 +86,5 @@ const MarketComponent = () => {
 MarketComponent.headerStyle = {
   backgroundColor: '#F2F6F9',
 };
-MarketComponent.title = '市场交易';
+MarketComponent.title = '市场买卖';
 export default MarketComponent;

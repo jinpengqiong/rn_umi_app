@@ -8,7 +8,7 @@ const data2 = [
   { name: '我的挂单', icon: 'https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png', path: '/myList' },
   { name: '我的订单', icon: 'https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png', path: '/myOrder' },
   { name: '钱包记录', icon: 'https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png', path: '/walletRecords' },
-  { name: '收付款信息', icon: 'https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png', path: '/feedback' },
+  { name: '收付款信息', icon: 'https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png', path: '/payMethods' },
   { name: '帮助', icon: 'https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png', path: '/feedback' },
   { name: '客服', icon: 'https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png', path: '/feedback' },
 ].map((_val, i) => ({
