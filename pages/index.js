@@ -1,12 +1,12 @@
 import React from 'react';
-import { StatusBar } from 'react-native';
+import { StatusBar,Image } from 'react-native';
 import { Icon } from '@ant-design/react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from '../tabs/HomeScreen';
 import ProfileScreen from '../tabs/ProfileScreen';
 const { Navigator, Screen } = createBottomTabNavigator();
 
-function IndexPage() {
+const  IndexPage = () => {
   return (
     <>
       <StatusBar animated={true} translucent={true} />
@@ -26,7 +26,7 @@ function IndexPage() {
           options={({ route }) => ({
             tabBarIcon: ({ focused, color, size }) => {
               // You can return any component that you like here!
-              return <Icon size={size} name="profile" color={color} />;
+              return <Icon size={size} name="user" color={color} />;
             },
           })}
           component={ProfileScreen}

@@ -1,14 +1,13 @@
 import React,{ useState } from 'react';
 import { ScrollView, Text, View } from 'react-native';
-import { InputItem, WingBlank, Flex, WhiteSpace, Button } from '@ant-design/react-native';
+import { InputItem, WingBlank, Flex, WhiteSpace, Button, Icon } from '@ant-design/react-native';
 import { RadioButton } from 'react-native-paper';
 import RadioGroup from 'react-native-custom-radio-group';
 
 
-
 const SalesComponent = () => {
   const [value, setValue] = useState('Second');
-  const [selectedOption, setSelectedOption] = useState('transport_bike');
+  const [selectedOption, setSelectedOption] = useState([]);
   const radioGroupList = [
     {
       label: '拆分',
@@ -76,10 +75,19 @@ const SalesComponent = () => {
             <Text style={{ fontSize: 17 }}>选择收款方式（可多选）</Text>
           </View>
           <RadioButton.Group onValueChange={(newValue) => setValue(newValue)} value={value}>
-            <Flex justify="between" style={{ marginTop: 30, marginBottom: 10 }}>
-              <RadioButton.Item label="微信" value="first" />
-              <RadioButton.Item label="支付宝" value="Second" />
-              <RadioButton.Item label="银联" value="Third" />
+            <Flex justify="around" style={{ marginTop: 30, marginBottom: 10 }}>
+              <Flex justify="center">
+                <Icon name="wechat" size={30} color="#50AF32" />
+                <RadioButton.Item label="微信" value="first" />
+              </Flex>
+              <Flex justify="center">
+                <Icon name="alipay-circle" size={30} color="#4086F5" />
+                <RadioButton.Item label="支付宝" value="Second" status={'checked'} />
+              </Flex>
+              <Flex justify="center">
+                <Icon name="wechat" size={30} color="#50AF32" />
+                <RadioButton.Item label="银联" value="Third" status={'checked'} />
+              </Flex>
             </Flex>
           </RadioButton.Group>
           <View style={{ paddingLeft: 10, paddingRight: 10 }}>
