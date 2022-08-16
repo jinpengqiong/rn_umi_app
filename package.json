@@ -36,7 +36,8 @@
     "umi": "^3.2.1",
     "umi-plugin-antd-react-native": "^0.5.0",
     "umi-preset-react-native": "^0.5.2",
-    "umi-preset-react-navigation": "^0.5.1"
+    "umi-preset-react-navigation": "^0.5.1",
+    "umi-request": "^1.4.0"
   },
   "private": true
 }

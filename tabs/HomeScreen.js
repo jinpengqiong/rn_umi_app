@@ -4,17 +4,9 @@ import { Card, Grid, WhiteSpace, WingBlank, Icon, Flex } from '@ant-design/react
 import { useSelector, history } from 'umi';
 import { Avatar } from 'react-native-paper';
 
-const data2 = [
-  { name: '我的挂单', icon: 'https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png', path: '/myList' },
-  { name: '我的订单', icon: 'https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png', path: '/myOrder' },
-  { name: '钱包记录', icon: 'https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png', path: '/walletRecords' },
-  { name: '收付款信息', icon: 'https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png', path: '/feedback' },
-  { name: '帮助', icon: 'https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png', path: '/feedback' },
-  { name: '客服', icon: 'https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png', path: '/feedback' },
-].map((_val, i) => ({
-  icon: _val.icon,
-  text: _val.name,
-  path: _val.path,
+const data = Array.from(new Array(12)).map((_val, i) => ({
+  icon: 'https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png',
+  text: `Name${i}`,
 }));
 
 export default function HomeScreen() {
