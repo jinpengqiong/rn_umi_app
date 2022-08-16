@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "UMIExpoExample",
-    "slug": "UMIExpoExample",
+    "name": "gopay",
+    "slug": "gopay",
     "platforms": [
       "ios",
       "android",
@@ -9,7 +9,7 @@
     ],
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/logo.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -23,10 +23,10 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.github.xuyuanxiang.UMIExpoExample"
+      "bundleIdentifier": "com.github.jinpeng.gopay"
     },
     "android": {
-      "package": "com.github.xuyuanxiang.UMIExpoExample"
+      "package": "com.github.jinpeng.gopay"
     },
     "entryPoint": "index"
   }

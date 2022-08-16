@@ -1,3 +1,15 @@
 export const images = {
-  "individual":require('../assets/images/icon_mine_no.png')
+  "individual":require('../assets/images/icon_mine_no.png'),
+  "buy":require('../assets/images/icon_buy.png'),
+  "sales":require('../assets/images/icon_sell.png'),
+  "walletaddress":require('../assets/images/icon_walletaddress.png'),
+  "copy":require('../assets/images/icon_copy.png'),
+  "mybill":require('../assets/images/icon_mybill.png'),
+  "myorder":require('../assets/images/icon_myorder.png'),
+  "walletrecords":require('../assets/images/icon_walletrecords.png'),
+  "collection":require('../assets/images/icon_collection.png'),
+  "help":require('../assets/images/icon_help.png'),
+  "customerservice":require('../assets/images/icon_customerservice.png'),
+  "scan_1":require('../assets/images/icon_scan_1.png'),
+  "bank":require('../assets/images/icon_bank.png'),
 }

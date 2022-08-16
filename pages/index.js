@@ -1,10 +1,11 @@
 import React from 'react';
-import {StatusBar} from 'react-native';
-import {Icon} from '@ant-design/react-native';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import { StatusBar,Image } from 'react-native';
+import { Icon } from '@ant-design/react-native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from '../tabs/HomeScreen';
 import ProfileScreen from '../tabs/ProfileScreen';
 const { Navigator, Screen } = createBottomTabNavigator();
+import { images } from '../utils/images';
 
 const  IndexPage = () => {
   return (
@@ -17,6 +18,16 @@ const  IndexPage = () => {
             tabBarIcon: ({ focused, color, size }) => {
               // You can return any component that you like here!
               return <Icon size={size} name="home" color={color} />;
+            },
+          })}
+          component={HomeScreen}
+        />
+        <Screen
+          name=" "
+          options={({ route }) => ({
+            tabBarIcon: ({ focused, color, size }) => {
+              // You can return any component that you like here!
+              return <Image source={images.scan_1} style={{ position: 'absolute', bottom: 0, width: 60, height: 60, zIndex: 100000, boxShadow: '0px 1.97759px 7.41595px #BDBDBD' }} />;
             },
           })}
           component={HomeScreen}
