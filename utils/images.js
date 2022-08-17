@@ -14,4 +14,5 @@ export const images = {
   "bank":require('../assets/images/icon_bank_1.png'),
   "line":require('../assets/images/icon_line.png'),
   "subscript":require('../assets/images/img_subscript.png'),
+  "banner":require('../assets/images/img_banner.png'),
 }

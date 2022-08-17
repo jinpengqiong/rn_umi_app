@@ -1,6 +1,6 @@
 import React,{ useEffect } from 'react';
 import { Text, View, ScrollView, StyleSheet, TouchableOpacity, Image } from 'react-native';
-import { Card, Grid, WhiteSpace, WingBlank, Icon, Flex } from '@ant-design/react-native';
+import { Card, Grid, WhiteSpace, WingBlank, Carousel, Flex } from '@ant-design/react-native';
 import { useSelector, history } from 'umi';
 import { Avatar } from 'react-native-paper';
 import { images } from '../utils/images';
@@ -22,14 +22,14 @@ export default function HomeScreen() {
   };
   return (
     <>
-      <ScrollView style={{ backgroundColor: '#F2F6F9' }}>
+      <ScrollView style={styles.pageContainer}>
         <View>
           <WingBlank size="lg">
             <Flex style={{ height: 40, marginTop: 40, marginBottom: 10 }}>
               <Avatar.Icon size={30} icon="book" />
               <Flex direction="column">
-                <Text style={{ marginLeft: 5, fontSize: 15 }}>Yu199603</Text>
-                <Text style={{ marginLeft: 5, fontSize: 12 }}>Yu199603</Text>
+                <Text style={{ marginLeft: 5, fontSize: 17 }}>Yu199603</Text>
+                <Text style={{ marginLeft: 5, fontSize: 13, color: '#9A9A9A' }}>Yu199603</Text>
               </Flex>
             </Flex>
             <View style={{ backgroundColor: '#5B5B5B', borderRadius: 20, position: 'relative' }}>
@@ -53,22 +53,22 @@ export default function HomeScreen() {
                   </Flex>
                 </View>
               </View>
-              <Image source={images.bank} style={{ position: 'absolute', top: 85, right: 18, width: 25, height: 14 }} />
-              <Image source={images.line} style={{ position: 'absolute', top: 105, width: '90%', left: 15, borderRadius: 1 }} />
-              <Image source={images.subscript} style={{ position: 'absolute', top: 0, right: 0, width: 93,height: 58 }} />
+              <Image source={images.bank} style={styles.position1} />
+              <Image source={images.line} style={styles.position2} />
+              <Image source={images.subscript} style={styles.position3} />
             </View>
             <Flex justify="around" align="center" style={{ position: 'absolute', top: 210, backgroundColor: '#fff', height: 89, width: '100%', zIndex: -1, borderRadius: 20 }}>
               <Flex direction="column" style={{ marginTop: 20 }}>
-                <Text style={{ fontSize: 17, color: '#595959', fontWeight: '400' }}>0.0</Text>
-                <Text style={{ fontSize: 12, color: '#595959', fontWeight: '400' }}>可售数量</Text>
+                <Text style={styles.textStyle}>0.0</Text>
+                <Text style={styles.textStyle2}>可售数量</Text>
               </Flex>
               <Flex direction="column" style={{ marginTop: 20 }}>
-                <Text style={{ fontSize: 17, color: '#595959', fontWeight: '400' }}>0.0</Text>
-                <Text style={{ fontSize: 12, color: '#595959', fontWeight: '400' }}>卖单数量</Text>
+                <Text style={styles.textStyle}>0.0</Text>
+                <Text style={styles.textStyle2}>卖单数量</Text>
               </Flex>
               <Flex direction="column" style={{ marginTop: 20 }}>
-                <Text style={{ fontSize: 17, color: '#595959', fontWeight: '400' }}>0.0</Text>
-                <Text style={{ fontSize: 12, color: '#595959', fontWeight: '400' }}>交易中</Text>
+                <Text style={styles.textStyle}>0.0</Text>
+                <Text style={styles.textStyle2}>交易中</Text>
               </Flex>
             </Flex>
             <View style={{ height: 80, clear: 'both' }}></View>
@@ -145,6 +145,62 @@ export default function HomeScreen() {
           </Flex>
         </View>
       </ScrollView>
+      <Carousel autoplay infinite dots={false}>
+        <View style={styles.containerHorizontal}>
+          <Image source={images.banner} style={{ width: '100%', height: 84, borderRadius: 8 }} />
+        </View>
+      </Carousel>
     </>
   );
 }
+
+const styles = StyleSheet.create({
+  pageContainer: {
+    backgroundColor: '#F2F6F9',
+  },
+  containerHorizontal: {
+    flexGrow: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  textStyle: {
+    fontSize: 17,
+    color: '#595959',
+    fontWeight: '400',
+  },
+  textStyle2: {
+    fontSize: 12,
+    color: '#595959',
+    fontWeight: '400',
+  },
+  position1: {
+    position: 'absolute',
+    top: 85,
+    right: 18,
+    width: 25,
+    height: 14,
+  },
+  position2: {
+    position: 'absolute',
+    top: 105,
+    height: 1,
+    width: '97%',
+    borderRadius: 1,
+  },
+  position3: {
+    position: 'absolute',
+    top: 0,
+    right: 0,
+    width: 93,
+    height: 58,
+  },
+  position4: {
+    position: 'absolute',
+    top: 210,
+    backgroundColor: '#fff',
+    height: 89,
+    width: '100%',
+    zIndex: -1,
+    borderRadius: 20,
+  },
+});

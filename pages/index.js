@@ -4,6 +4,7 @@ import { Icon } from '@ant-design/react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from '../tabs/HomeScreen';
 import ProfileScreen from '../tabs/ProfileScreen';
+import ScanScreenPage from '../tabs/scanScreen';
 const { Navigator, Screen } = createBottomTabNavigator();
 import { images } from '../utils/images';
 
@@ -30,7 +31,7 @@ const  IndexPage = () => {
               return <Image source={images.scan_1} style={{ position: 'absolute', bottom: 0, width: 60, height: 60, zIndex: 100000, boxShadow: '0px 1.97759px 7.41595px #BDBDBD' }} />;
             },
           })}
-          component={HomeScreen}
+          component={ScanScreenPage}
         />
         <Screen
           name="个人"

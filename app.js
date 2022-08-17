@@ -46,7 +46,7 @@ export function getReactNavigationDefaultScreenOptions() {
 
 const persistConfig = {
   timeout: 2000, // you can define your time. But is required.
-  key: 'com.github.xuyuanxiang.UMIExpoExample.STATE',
+  key: 'com.github.jinpeng.gopay.STATE',
   storage: AsyncStorage,
 };
 
@@ -73,7 +73,7 @@ export const dva = {
   },
 };
 
-const PERSISTENCE_KEY = 'com.github.xuyuanxiang.UMIExpoExample.NAVIGATION_STATE';
+const PERSISTENCE_KEY = 'com.github.jinpeng.gopay.NAVIGATION_STATE';
 
 // 返回之前本地持久化保存的状态，通常用于需要复苏应用、状态恢复的场景。
 export async function getReactNavigationInitialState() {
