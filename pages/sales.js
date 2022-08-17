@@ -7,7 +7,7 @@ import RadioGroup from 'react-native-custom-radio-group';
 
 const SalesComponent = () => {
   const [value, setValue] = useState('Second');
-  const [selectedOption, setSelectedOption] = useState([]);
+  const [selectedOption, setSelectedOption] = useState(null);
   const radioGroupList = [
     {
       label: '拆分',

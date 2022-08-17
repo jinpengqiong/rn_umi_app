@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{ useEffect } from 'react';
 import { Text, View, ScrollView, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { Card, Grid, WhiteSpace, WingBlank, Icon, Flex } from '@ant-design/react-native';
 import { useSelector, history } from 'umi';
@@ -48,12 +48,14 @@ export default function HomeScreen() {
                       <Text style={{ color: '#F5FCFF' }}>bdja39dsadda242342342</Text>
                     </Flex>
                     <TouchableOpacity activeOpacity={0.5} onPress={() => {}}>
-                      <Image source={images.copy} style={{ height: 18, width: 18, marginRight: 10  }} />
+                      <Image source={images.copy} style={{ height: 18, width: 18, marginRight: 10 }} />
                     </TouchableOpacity>
                   </Flex>
                 </View>
               </View>
-              <Image source={images.bank} style={{ position: 'absolute', top: 60, right: 10,  }} />
+              <Image source={images.bank} style={{ position: 'absolute', top: 85, right: 18, width: 25, height: 14 }} />
+              <Image source={images.line} style={{ position: 'absolute', top: 105, width: '90%', left: 15, borderRadius: 1 }} />
+              <Image source={images.subscript} style={{ position: 'absolute', top: 0, right: 0, width: 93,height: 58 }} />
             </View>
             <Flex justify="around" align="center" style={{ position: 'absolute', top: 210, backgroundColor: '#fff', height: 89, width: '100%', zIndex: -1, borderRadius: 20 }}>
               <Flex direction="column" style={{ marginTop: 20 }}>
@@ -106,8 +108,9 @@ export default function HomeScreen() {
         <View style={{ backgroundColor: '#fff' }}>
           {/* <Grid data={data2} columnNum={3} hasLine={false} onPress={handlePress} itemStyle={{ fontSize: 100 }} /> */}
           <Flex style={{ flex: 1, height: 111 }}>
-            {data.map((item) => (
+            {data.map((item, i) => (
               <TouchableOpacity
+                key={i}
                 activeOpacity={0.5}
                 onPress={() => {
                   history.push(item.path);
@@ -123,8 +126,9 @@ export default function HomeScreen() {
             ))}
           </Flex>
           <Flex style={{ flex: 1, height: 111 }}>
-            {data2.map((item) => (
+            {data2.map((item, i) => (
               <TouchableOpacity
+                key={i}
                 activeOpacity={0.5}
                 onPress={() => {
                   history.push(item.path);

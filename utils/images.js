@@ -11,5 +11,7 @@ export const images = {
   "help":require('../assets/images/icon_help.png'),
   "customerservice":require('../assets/images/icon_customerservice.png'),
   "scan_1":require('../assets/images/icon_scan_1.png'),
-  "bank":require('../assets/images/icon_bank.png'),
+  "bank":require('../assets/images/icon_bank_1.png'),
+  "line":require('../assets/images/icon_line.png'),
+  "subscript":require('../assets/images/img_subscript.png'),
 }

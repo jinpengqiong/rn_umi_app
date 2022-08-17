@@ -47,7 +47,7 @@ const MarketComponent = () => {
         <View style={{ position: 'relative', borderRadius: 8, backgroundColor: '#FFFFFF', borderRadius: 8 }}>
           {data.map((item, index) => {
             return (
-              <WingBlank size="lg">
+              <WingBlank size="lg" key={index}>
                 <Flex justify="between" style={{ backgroundColor: '#FFFFFF', borderBottomWidth: 1, borderBottomColor: '#F4F4F4', height: 66 }}>
                   <Flex align="center">
                     <Avatar.Icon size={37} icon="account" style={{ marginRight: 10 }} />
@@ -60,7 +60,7 @@ const MarketComponent = () => {
                   </Flex>
                   <Flex direction="column" align="center">
                     <Text style={{ fontWeight: '600', fontSize: 21, color: '#595959' }}>
-                      1239.0<Text style={{ fontWeight: '600', fontSize: 7.73, color: '#9A9A9A', lineHeight: '8,5px' }}> GOP</Text>
+                      1239.0<Text style={{ fontWeight: '600', fontSize: 7.73, color: '#9A9A9A'}}> GOP</Text>
                     </Text>
                     <TouchableOpacity
                       activeOpacity={0.5}
