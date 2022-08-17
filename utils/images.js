@@ -15,4 +15,7 @@ export const images = {
   "line":require('../assets/images/icon_line.png'),
   "subscript":require('../assets/images/img_subscript.png'),
   "banner":require('../assets/images/img_banner.png'),
+  "alipay":require('../assets/images/bg_alipay.png'),
+  "wechat":require('../assets/images/bg_wechat.png'),
+  "bg_unionpay":require('../assets/images/bg_unionpay.png'),
 }

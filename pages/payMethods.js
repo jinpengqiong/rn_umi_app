@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { useSelector, history } from 'umi';
-import { ScrollView, Text, View, RefreshControl } from 'react-native';
+import { ScrollView, Text, View, RefreshControl, ImageBackground } from 'react-native';
 import { InputItem, WingBlank, Flex, Icon, Modal } from '@ant-design/react-native';
 import { Button } from 'react-native-paper';
+import { images } from '../utils/images';
 
 const PayMethodsComponent = () => {
   const [refresh, setRefresh] = useState(false);
@@ -25,6 +26,7 @@ const PayMethodsComponent = () => {
       },
       color: '#4086F5',
       iconName: 'alipay-circle',
+      backgroundImage: images.alipay,
     },
     {
       success: true,
@@ -36,6 +38,19 @@ const PayMethodsComponent = () => {
       },
       color: '#50AF32',
       iconName: 'wechat',
+      backgroundImage: images.wechat,
+    },
+    {
+      success: true,
+      user: {
+        username: '22222',
+        payWay: '银联',
+        price: 200.0,
+        avatar: 'https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png',
+      },
+      color: '#50AF32',
+      iconName: 'wechat',
+      backgroundImage: images.bg_unionpay,
     },
   ];
 
@@ -52,20 +67,22 @@ const PayMethodsComponent = () => {
         <WingBlank size="lg">
           {data.map((item, index) => {
             return (
-              <View style={{ position: 'relative', marginTop: 20, height: 120, borderRadius: 8, backgroundColor: item.color }} key={index}>
-                <WingBlank size="lg">
-                  <Flex justify="between" style={{ marginTop: 30 }}>
-                    <Flex>
-                      <Icon name={item.iconName} color="#FFFFFF" style={{ marginRight: 10 }} size={40} />
-                      <Flex direction="column" align="start">
-                        <Text style={{ fontWeight: '600', fontSize: 18, color: '#FFFFFF', marginBottom: 5 }}>{item.user.payWay}</Text>
-                        <Text style={{ fontWeight: '500', fontSize: 14, color: '#FFFFFF' }}>{item.user.payWay}：* 李大卫</Text>
+              <ImageBackground source={item.backgroundImage} imageStyle={{ borderRadius: 7 }} style={{ marginBottom: 10 }} key={index}>
+                <View style={{ position: 'relative', marginTop: 20, height: 120, borderRadius: 7 }}>
+                  <WingBlank size="lg">
+                    <Flex justify="between" style={{ marginTop: 30 }}>
+                      <Flex>
+                        <Icon name={item.iconName} color="#FFFFFF" style={{ marginRight: 10 }} size={40} />
+                        <Flex direction="column" align="start">
+                          <Text style={{ fontWeight: '600', fontSize: 18, color: '#FFFFFF', marginBottom: 5 }}>{item.user.payWay}</Text>
+                          <Text style={{ fontWeight: '500', fontSize: 14, color: '#FFFFFF' }}>{item.user.payWay}：* 李大卫</Text>
+                        </Flex>
                       </Flex>
+                      <Icon name="delete" color="#FFFFFF" />
                     </Flex>
-                    <Icon name="delete" color="#FFFFFF" />
-                  </Flex>
-                </WingBlank>
-              </View>
+                  </WingBlank>
+                </View>
+              </ImageBackground>
             );
           })}
         </WingBlank>
