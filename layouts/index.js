@@ -4,6 +4,7 @@ import {BackButton, connect, Redirect} from 'umi';
 function Layout({children, hasSignedIn, route, navigation}) {
   useLayoutEffect(() => {
     if (route.name === '/login' || route.name === '/') {
+      console.log('route', route)
       navigation.setOptions({headerShown: false});
     } else {
       navigation.setOptions({headerShown: true});

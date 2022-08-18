@@ -44,7 +44,7 @@ const MarketComponent = () => {
         showsVerticalScrollIndicator={false}
         keyboardShouldPersistTaps={'handled'}
       >
-        <View style={{ position: 'relative', borderRadius: 8, backgroundColor: '#FFFFFF', borderRadius: 8 }}>
+        <View style={{ position: 'relative', borderRadius: 8, backgroundColor: '#FFFFFF' }}>
           {data.map((item, index) => {
             return (
               <WingBlank size="lg" key={index}>

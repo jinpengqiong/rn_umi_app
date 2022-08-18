@@ -24,4 +24,7 @@ export const images = {
   "icon_alipay_small":require('../assets/images/icon_alipay_small.png'),
   "icon_wechatpay_small":require('../assets/images/icon_wechatpay_small.png'),
   "icon_unionpay_small":require('../assets/images/icon_unionpay_small.png'),
+  "icon_bg_realname":require('../assets/images/icon_bg_realname.png'),
+  "img_IDcard_front":require('../assets/images/img_IDcard_front.png'),
+  "icon_carmra":require('../assets/images/icon_carmra.png'),
 }
