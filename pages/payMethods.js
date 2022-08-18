@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector, history } from 'umi';
-import { ScrollView, Text, View, RefreshControl, ImageBackground } from 'react-native';
+import { ScrollView, Text, View, RefreshControl, ImageBackground, Image, TouchableOpacity } from 'react-native';
 import { InputItem, WingBlank, Flex, Icon, Modal } from '@ant-design/react-native';
 import { Button } from 'react-native-paper';
 import { images } from '../utils/images';
@@ -24,8 +24,8 @@ const PayMethodsComponent = () => {
         price: 100.0,
         avatar: 'https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png',
       },
-      color: '#4086F5',
       iconName: 'alipay-circle',
+      IconImage: images.icon_alipay_small,
       backgroundImage: images.alipay,
     },
     {
@@ -36,8 +36,8 @@ const PayMethodsComponent = () => {
         price: 200.0,
         avatar: 'https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png',
       },
-      color: '#50AF32',
       iconName: 'wechat',
+      IconImage: images.icon_wechatpay_small,
       backgroundImage: images.wechat,
     },
     {
@@ -48,8 +48,8 @@ const PayMethodsComponent = () => {
         price: 200.0,
         avatar: 'https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png',
       },
-      color: '#50AF32',
       iconName: 'wechat',
+      IconImage: images.icon_unionpay_small,
       backgroundImage: images.bg_unionpay,
     },
   ];
@@ -72,13 +72,16 @@ const PayMethodsComponent = () => {
                   <WingBlank size="lg">
                     <Flex justify="between" style={{ marginTop: 30 }}>
                       <Flex>
-                        <Icon name={item.iconName} color="#FFFFFF" style={{ marginRight: 10 }} size={40} />
+                        {/* <Icon name={item.iconName} color="#FFFFFF" style={{ marginRight: 10 }} size={40} /> */}
+                        <Image source={item.IconImage} style={{ marginRight: 10, width: 40, height: 40 }} />
                         <Flex direction="column" align="start">
                           <Text style={{ fontWeight: '600', fontSize: 18, color: '#FFFFFF', marginBottom: 5 }}>{item.user.payWay}</Text>
                           <Text style={{ fontWeight: '500', fontSize: 14, color: '#FFFFFF' }}>{item.user.payWay}：* 李大卫</Text>
                         </Flex>
                       </Flex>
-                      <Icon name="delete" color="#FFFFFF" />
+                      <TouchableOpacity activeOpacity={0.5} onPress={() => {}}>
+                        <Icon name="delete" color="#FFFFFF" />
+                      </TouchableOpacity>
                     </Flex>
                   </WingBlank>
                 </View>

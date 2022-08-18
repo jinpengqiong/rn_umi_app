@@ -18,4 +18,10 @@ export const images = {
   "alipay":require('../assets/images/bg_alipay.png'),
   "wechat":require('../assets/images/bg_wechat.png'),
   "bg_unionpay":require('../assets/images/bg_unionpay.png'),
+  "icon_pay_alipay":require('../assets/images/icon_pay_alipay.png'),
+  "icon_pay_wechat":require('../assets/images/icon_pay_wechat.png'),
+  "icon_pay_chinabank":require('../assets/images/icon_pay_chinabank.png'),
+  "icon_alipay_small":require('../assets/images/icon_alipay_small.png'),
+  "icon_wechatpay_small":require('../assets/images/icon_wechatpay_small.png'),
+  "icon_unionpay_small":require('../assets/images/icon_unionpay_small.png'),
 }

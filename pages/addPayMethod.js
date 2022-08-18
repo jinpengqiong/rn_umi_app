@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { useSelector, history } from 'umi';
-import { ScrollView, Text, View, TouchableOpacity } from 'react-native';
+import { ScrollView, Text, View, TouchableOpacity,Image } from 'react-native';
 import { WhiteSpace, WingBlank, Flex, Icon, Modal, InputItem } from '@ant-design/react-native';
 import RadioGroup from 'react-native-custom-radio-group';
+import { images } from '../utils/images';
 
 
 const PayMethodsComponent = () => {
@@ -769,8 +770,8 @@ const PayMethodsComponent = () => {
             setVisible(false);
           }}
         >
-          <Flex style={{ paddingVertical: 10, paddingHorizontal: 20, marginBottom: 30 }}>
-            <Icon name="wechat" style={{ marginRight: 10 }} size={30} color="#50AF32" />
+          <Flex style={{ paddingVertical: 10, paddingHorizontal: 20, marginBottom: 10,marginTop: 10 }}>
+            <Image source={images.icon_pay_wechat} style={{ marginRight: 10, width: 18, height: 18 }} />
             <Text style={{ fontWeight: '500', fontSize: 16 }}>微信</Text>
           </Flex>
         </TouchableOpacity>
@@ -781,8 +782,8 @@ const PayMethodsComponent = () => {
             setVisible(false);
           }}
         >
-          <Flex style={{ paddingHorizontal: 20, marginBottom: 30 }}>
-            <Icon name="alipay-circle" style={{ marginRight: 10 }} size={30} color="#4086F5" />
+          <Flex style={{ paddingHorizontal: 20, marginBottom: 20 }}>
+            <Image source={images.icon_pay_alipay} style={{ marginRight: 10, width: 18, height: 18 }} />
             <Text style={{ fontWeight: '500', fontSize: 16 }}>支付宝</Text>
           </Flex>
         </TouchableOpacity>
@@ -793,9 +794,10 @@ const PayMethodsComponent = () => {
             setVisible(false);
           }}
         >
-          <View style={{ paddingHorizontal: 20, marginBottom: 30 }}>
+          <Flex style={{ paddingHorizontal: 20, marginBottom: 20 }}>
+            <Image source={images.icon_pay_chinabank} style={{ marginRight: 10, width: 18, height: 18 }} />
             <Text style={{ fontWeight: '500', fontSize: 16 }}>银行</Text>
-          </View>
+          </Flex>
         </TouchableOpacity>
       </Modal>
       <Modal popup visible={visible2} animationType="slide-up" onClose={onClose2} maskClosable={true}>
