@@ -1,8 +1,9 @@
 import React,{ useState } from 'react';
-import { ScrollView, Text, View } from 'react-native';
+import { ScrollView, Text, View, Image } from 'react-native';
 import { InputItem, WingBlank, Flex, WhiteSpace, Button, Icon } from '@ant-design/react-native';
 import { RadioButton } from 'react-native-paper';
 import RadioGroup from 'react-native-custom-radio-group';
+import { images } from '../utils/images';
 
 
 const SalesComponent = () => {
@@ -75,20 +76,22 @@ const SalesComponent = () => {
             <Text style={{ fontSize: 17 }}>选择收款方式（可多选）</Text>
           </View>
           <RadioButton.Group onValueChange={(newValue) => setValue(newValue)} value={value}>
-            <Flex justify="around" style={{ marginTop: 30, marginBottom: 10 }}>
-              <Flex justify="center">
-                <Icon name="wechat" size={30} color="#50AF32" />
-                <RadioButton.Item label="微信" value="first" />
+            <WingBlank size="lg">
+              <Flex justify="around" style={{ marginTop: 30, marginBottom: 10 }}>
+                <Flex justify="center">
+                  <Image source={images.icon_pay_wechat} style={{ width: 18, height: 18 }} />
+                  <RadioButton.Item label="微信" value="first" />
+                </Flex>
+                <Flex justify="center">
+                  <Image source={images.icon_pay_alipay} style={{ width: 18, height: 18 }} />
+                  <RadioButton.Item label="支付宝" value="Second" status={'checked'} />
+                </Flex>
+                <Flex justify="center">
+                  <Image source={images.icon_pay_chinabank} style={{ width: 18, height: 18 }} />
+                  <RadioButton.Item label="银联" value="Third" status={'checked'} />
+                </Flex>
               </Flex>
-              <Flex justify="center">
-                <Icon name="alipay-circle" size={30} color="#4086F5" />
-                <RadioButton.Item label="支付宝" value="Second" status={'checked'} />
-              </Flex>
-              <Flex justify="center">
-                <Icon name="wechat" size={30} color="#50AF32" />
-                <RadioButton.Item label="银联" value="Third" status={'checked'} />
-              </Flex>
-            </Flex>
+            </WingBlank>
           </RadioButton.Group>
           <View style={{ paddingLeft: 10, paddingRight: 10 }}>
             <Button type="primary">出售</Button>

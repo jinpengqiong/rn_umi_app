@@ -26,16 +26,16 @@ export default function ProfileScreen() {
         </Flex>
       </Flex>
       <List style={{ marginBottom: 70 }}>
-        <Link to="/feedback" component={List.Item} arrow="horizontal" thumb={<Icon name="info-circle" />}>
+        <Link to="/verification" component={List.Item} arrow="horizontal" thumb={<Icon name="info-circle" />}>
           实名认证
         </Link>
         <Item extra="dfiljsklfjasdklj;askljf" arrow="empty" thumb={<Icon name="setting" />}>
           钱包地址
         </Item>
-        <Link to="/settings" component={List.Item} arrow="horizontal" thumb={<Icon name="setting" />}>
+        <Link to="/changePassword" component={List.Item} arrow="horizontal" thumb={<Icon name="setting" />}>
           设置密码
         </Link>
-        <Link to="/settings" component={List.Item} arrow="horizontal" thumb={<Icon name="setting" />}>
+        <Link to="/setPayCode" component={List.Item} arrow="horizontal" thumb={<Icon name="setting" />}>
           设置支付密码
         </Link>
         <Link to="/settings" component={List.Item} arrow="horizontal" thumb={<Icon name="setting" />}>
