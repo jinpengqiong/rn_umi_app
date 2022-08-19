@@ -16,7 +16,7 @@ const  IndexPage = () => {
         <Screen
           name="主页"
           options={({ route }) => ({
-            tabBarLabel: 'Home',
+            // tabBarLabel: '主页',
             tabBarIcon: ({ focused, color, size }) => {
               // You can return any component that you like here!
               return <Icon size={size} name="home" color={color} />;
@@ -27,7 +27,7 @@ const  IndexPage = () => {
         <Screen
           name=" "
           options={({ route }) => ({
-            tabBarLabel: 'Scan',
+            // tabBarLabel: 'Scan',
             tabBarIcon: ({ focused, color, size }) => {
               // You can return any component that you like here!
               return <Image source={images.scan_1} style={{ position: 'absolute', bottom: 0, width: 60, height: 60, zIndex: 100000 }} />;
@@ -38,7 +38,7 @@ const  IndexPage = () => {
         <Screen
           name="个人"
           options={({ route }) => ({
-            tabBarLabel: 'Profiles',
+            // tabBarLabel: '个人',
             tabBarIcon: ({ focused, color, size }) => {
               // You can return any component that you like here!
               return <Icon size={size} name="user" color={color} />;

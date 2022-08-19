@@ -673,7 +673,6 @@ const PayMethodsComponent = () => {
     setVisible(false);
   };
   const handleSelectChange= (value) => {
-    console.log('value', value)
     const bankName = bankList.filter(item => item.value === value)[0].label;
     setSelectedOption(value);
     setBankName(bankName);
