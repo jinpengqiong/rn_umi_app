@@ -27,5 +27,8 @@ export const images = {
   "icon_bg_realname":require('../assets/images/icon_bg_realname.png'),
   "img_IDcard_front":require('../assets/images/img_IDcard_front.png'),
   "icon_carmra":require('../assets/images/icon_carmra.png'),
-  "icon_carmra":require('../assets/images/icon_carmra.png'),
+  "icon_faceid":require('../assets/images/icon_faceid.png'),
+  "icon_light":require('../assets/images/icon_light.png'),
+  "icon_positive":require('../assets/images/icon_positive.png'),
+  "icon_face":require('../assets/images/icon_face.png'),
 }

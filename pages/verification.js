@@ -7,6 +7,9 @@ import { Button } from 'react-native-paper';
 
 const VerificationComponent = () => {
   const [NameValue, setNameValue] = useState('');
+  const handleClick = () => {
+    history.push('/auth');
+  }
   return (
     <>
       <View style={{ backgroundColor: '#fff', position: 'relative', height: '100%' }}>
@@ -36,7 +39,7 @@ const VerificationComponent = () => {
             last={true}
           />
         </View>
-        <View style={{ backgroundColor: '#F2F7FA',height: 10, width:"100%" }}></View>
+        <View style={{ backgroundColor: '#F2F7FA', height: 10, width: '100%' }}></View>
         <View style={{ marginTop: 10 }}>
           <WingBlank>
             <Text style={{ marginTop: 10, fontWeight: '500', fontSize: 16 }}>上传身份证照片</Text>
@@ -51,9 +54,7 @@ const VerificationComponent = () => {
         </View>
       </View>
       <WingBlank>
-        <Button mode="contained" onPress={() => {
-          history.push('/auth')
-          }} style={{ position: 'absolute', bottom: 20, width: '100%', backgroundColor: '#4086F5', height: 38, lineHeight: 38, borderRadius: 10 }}>
+        <Button mode="contained" onPress={handleClick} style={{ position: 'absolute', bottom: 20, width: '100%', backgroundColor: '#4086F5', height: 38, lineHeight: 38, borderRadius: 10 }}>
           下一步
         </Button>
       </WingBlank>
