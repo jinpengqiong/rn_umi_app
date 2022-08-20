@@ -7,9 +7,10 @@ import {
   WingBlank,
   Toast,
 } from '@ant-design/react-native';
-import {StatusBar, View} from 'react-native';
+import { StatusBar, View, Image, StyleSheet } from 'react-native';
 import {useDispatch, useSelector, Redirect} from 'umi';
 import Loading from '../components/Loading';
+import { images } from '../utils/images';
 
 const CheckboxItem = Checkbox.CheckboxItem;
 
@@ -65,8 +66,11 @@ function LoginPage({history}) {
   }
 
   return (
-    <View style={{flex: 1, justifyContent: 'center'}}>
+    <View style={{ flex: 1, justifyContent: 'center' }}>
       <StatusBar barStyle="dark-content" />
+      <View>
+        <Image source={images.icon_head_portrait} style={styles.images1} />
+      </View>
       <WingBlank size="lg">
         <List>
           <InputItem value={username} onChange={setUsername}>
@@ -75,9 +79,7 @@ function LoginPage({history}) {
           <InputItem type="password" value={password} onChange={setPassword}>
             密码
           </InputItem>
-          <CheckboxItem
-            checked={rememberMe}
-            onChange={() => setRememberMe(!rememberMe)}>
+          <CheckboxItem checked={rememberMe} onChange={() => setRememberMe(!rememberMe)}>
             Remember me
           </CheckboxItem>
           <List.Item>
@@ -90,6 +92,12 @@ function LoginPage({history}) {
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  images1:{
+
+  }
+});
 
 LoginPage.title = '登录';
 

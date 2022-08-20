@@ -31,4 +31,5 @@ export const images = {
   "icon_light":require('../assets/images/icon_light.png'),
   "icon_positive":require('../assets/images/icon_positive.png'),
   "icon_face":require('../assets/images/icon_face.png'),
+  "icon_head_portrait":require('../assets/images/icon_head_portrait.png'),
 }
