@@ -49,14 +49,9 @@ const LoginPage = () => {
       return <Loading />;
     }
     if (hasSignedIn) {
-      if (history.length > 1) {
-        history.push('/login');
-      } else {
-        history.push('/');
-      }
+      history.push('/');
     }
   }, [])
-
   return (
     <>
       <View style={styles.container}>
@@ -142,7 +137,7 @@ const LoginPage = () => {
         </ScrollView>
         <Flex style={{ paddingHorizontal: 20, width: '100%', position: 'absolute', bottom: -65 }} justify="between">
           <Button
-            style={{ height: 38, width: '45%', borderRadius: '50%', backgroundColor: '#EFF0F1', color: '#B0B4C0' }}
+            style={{ height: 38, width: '45%', borderRadius: 50, backgroundColor: '#EFF0F1', color: '#B0B4C0' }}
             onPress={() => {
               setVisible(false);
             }}
@@ -153,8 +148,8 @@ const LoginPage = () => {
             style={{ height: 38, width: '45%', borderRadius: '50%' }}
             type="primary"
             onPress={() => {
-              history.push('/register');
               setVisible(false);
+              history.push('/register');
             }}
           >
             确认

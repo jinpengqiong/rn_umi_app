@@ -21,7 +21,7 @@ const  RegisterPage = ({ history }) => {
   const [password, setPassword] = useState(_password);
   const [checkCode, setCheckCode] = useState('');
 
-  function onSubmit() {
+  const onSubmit = () => {
 
   }
 
@@ -57,7 +57,7 @@ const  RegisterPage = ({ history }) => {
           <InputItem clear value={checkCode} onChange={setCheckCode} placeholder="请输入验证码" />
           <View style={{ height: 10, backgroundColor: '#F2F7FA' }}></View>
           <WingBlank>
-            <Button type="primary" onPress={onSubmit} style={{ marginTop: 20 }}>
+            <Button type="primary" onPress={onSubmit} style={{ marginTop: 10 }}>
               注册
             </Button>
           </WingBlank>

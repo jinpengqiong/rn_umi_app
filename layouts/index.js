@@ -10,15 +10,7 @@ function Layout({children, hasSignedIn, route, navigation}) {
     }
   }, [navigation, route.name]);
 
-  return (
-    <BackButton>
-      {hasSignedIn || route.name === '/login' ? (
-        children
-      ) : (
-        <Redirect to="/login" push />
-      )}
-    </BackButton>
-  );
+  return <BackButton>{hasSignedIn || route.name === '/login' || route.name === '/register' ? children : <Redirect to="/login" push />}</BackButton>;
 }
 
 export default connect(({user: {hasSignedIn}}) => ({
