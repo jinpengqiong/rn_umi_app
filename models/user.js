@@ -26,8 +26,8 @@ export default {
   reducers: {
     signIn(state, {payload: {username, password}}) {
       state.hasSignedIn = true;
-        state.username = '';
-        state.password = '';
+      state.username = '';
+      state.password = '';
     },
     signOut(state) {
       state.hasSignedIn = false;

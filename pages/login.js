@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { Button, InputItem, WhiteSpace, Checkbox, WingBlank, Toast, Flex, Modal } from '@ant-design/react-native';
 import { StatusBar, View, Image, StyleSheet, Text, TouchableOpacity, ScrollView } from 'react-native';
 import { useDispatch, useSelector, Redirect, history } from 'umi';
+import { TextInput } from 'react-native-paper';
 import Loading from '../components/Loading';
 import { images } from '../utils/images';
 
@@ -65,15 +66,30 @@ const LoginPage = () => {
           <WingBlank>
             <Text style={styles.title2}>用户名</Text>
           </WingBlank>
-          <InputItem clear value={username} onChange={setUsername} placeholder="请输入用户名" />
+          <Flex style={{ width: '95%', marginLeft: 20, marginRight: 50 }}>
+            <Image source={images.icon_username} style={styles.images2} />
+            <View style={{ width: '90%' }}>
+              <InputItem clear value={username} onChange={setUsername} placeholder="请输入用户名" />
+            </View>
+          </Flex>
           <WingBlank>
             <Text style={styles.title2}>密码</Text>
           </WingBlank>
-          <InputItem clear value={password} onChange={setPassword} placeholder="请输入密码" />
+          <Flex style={{ width: '95%', marginLeft: 20, marginRight: 50 }}>
+            <Image source={images.icon_lock} style={styles.images2} />
+            <View style={{ width: '90%' }}>
+              <InputItem clear value={password} onChange={setPassword} placeholder="请输入密码" extra={<Image source={images.icon_eye_nol_gray} style={styles.images2} />} />
+            </View>
+          </Flex>
           <WingBlank>
             <Text style={styles.title2}>验证码</Text>
           </WingBlank>
-          <InputItem clear value={checkCode} onChange={setCheckCode} placeholder="请输入验证码" />
+          <Flex style={{ width: '95%', marginLeft: 20, marginRight: 50 }}>
+            <Image source={images.icon_lock} style={styles.images2} />
+            <View style={{ width: '90%' }}>
+              <InputItem clear value={checkCode} onChange={setCheckCode} placeholder="请输入验证码" />
+            </View>
+          </Flex>
           <WingBlank>
             <Button type="primary" onPress={onSubmit} style={{ marginTop: 40 }}>
               登录
@@ -193,6 +209,15 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     fontSize: 13,
     color: '#4086F5',
+  },
+  images1: {
+    width: 110,
+    height: 110,
+  },
+  images2: {
+    width: 18,
+    height: 18,
+    color: '#BFBFBF',
   },
 });
 

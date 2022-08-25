@@ -32,4 +32,8 @@ export const images = {
   "icon_positive":require('../assets/images/icon_positive.png'),
   "icon_face":require('../assets/images/icon_face.png'),
   "icon_head_portrait":require('../assets/images/icon_head_portrait.png'),
+  "icon_eye_nol_gray":require('../assets/images/icon_eye_nol_gray.png'),
+  "icon_username":require('../assets/images/icon_username.png'),
+  "icon_lock":require('../assets/images/icon_lock.png'),
+  "icon_security":require('../assets/images/icon_security.png'),
 }
