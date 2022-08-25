@@ -85,7 +85,7 @@ const LoginPage = () => {
             <Text style={styles.title2}>验证码</Text>
           </WingBlank>
           <Flex style={{ width: '95%', marginLeft: 20, marginRight: 50 }}>
-            <Image source={images.icon_lock} style={styles.images2} />
+            <Image source={images.icon_security} style={styles.images2} />
             <View style={{ width: '90%' }}>
               <InputItem clear value={checkCode} onChange={setCheckCode} placeholder="请输入验证码" />
             </View>
@@ -217,7 +217,6 @@ const styles = StyleSheet.create({
   images2: {
     width: 18,
     height: 18,
-    color: '#BFBFBF',
   },
 });
 

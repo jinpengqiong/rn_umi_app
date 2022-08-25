@@ -1,28 +1,23 @@
 import React, { useState } from 'react';
 import { Link, useDispatch } from 'umi';
-import { Text, View, ScrollView, StyleSheet, Image } from 'react-native';
+import { Text, View, ScrollView, StyleSheet, Image, Clipboard } from 'react-native';
 import { Icon, List, WhiteSpace, WingBlank, Button, Flex, Modal, Toast } from '@ant-design/react-native';
 import { Avatar } from 'react-native-paper';
-import * as Clipboard from 'expo-clipboard';
+
 const Item = List.Item;
 
 export default function ProfileScreen() {
   const dispatch = useDispatch();
   const [visible, setVisible] = useState(false);
-  const [copiedText, setCopiedText] = useState('');
+
+  const copyToClipboard = async (Text) => {
+    Clipboard.setString(Text);
+    // const str = await Clipboard.getString()
+  };
   const handlePress = (e) => {
     dispatch({
       type: 'user/signOut',
     });
-  };
-  const copyToClipboard = async (text) => {
-    await Clipboard.setStringAsync(text);
-    Toast.info("复制成功")
-  };
-
-  const fetchCopiedText = async () => {
-    const text = await Clipboard.getStringAsync();
-    setCopiedText(text);
   };
   return (
     <>
@@ -42,17 +37,12 @@ export default function ProfileScreen() {
           <Link to="/verification" component={List.Item} arrow="horizontal" thumb={<Icon name="info-circle" />}>
             实名认证
           </Link>
-          <TouchableOpacity
-            activeOpacity={0.5}
-            onPress={() => {
-              copyToClipboard('dfiljsklfjasdklj;askljf');
-            }}
-          >
-            <Item extra="dfiljsklfjasdklj;askljf" arrow="empty" thumb={<Icon name="setting" />}>
-              钱包地址
-            </Item>
-          </TouchableOpacity>
-
+          <Item extra="dfiljsklfjasdklj;askljf" arrow="empty" thumb={<Icon name="setting" />} onPress={() => {
+            copyToClipboard('dfiljsklfjasdklj;askljf');
+            Toast.info('复制成功')
+          }}>
+            钱包地址
+          </Item>
           <Link to="/changePassword" component={List.Item} arrow="horizontal" thumb={<Icon name="setting" />}>
             设置密码
           </Link>
