@@ -1,6 +1,6 @@
 import React,{ useEffect } from 'react';
-import { Text, View, ScrollView, StyleSheet, TouchableOpacity, Image } from 'react-native';
-import { Card, Grid, WhiteSpace, WingBlank, Carousel, Flex } from '@ant-design/react-native';
+import { Text, View, ScrollView, StyleSheet, TouchableOpacity, Image, Clipboard } from 'react-native';
+import { Card, Grid, WhiteSpace, WingBlank, Carousel, Flex, Toast } from '@ant-design/react-native';
 import { useSelector, history } from 'umi';
 import { Avatar } from 'react-native-paper';
 import { images } from '../utils/images';
@@ -17,8 +17,9 @@ const data2 = [
 ];
 
 export default function HomeScreen() {
-  const handlePress = (el, index) => {
-    history.push(el.path);
+  const copyToClipboard = async (Text) => {
+    Clipboard.setString(Text);
+    // const str = await Clipboard.getString()
   };
   return (
     <>
@@ -47,7 +48,13 @@ export default function HomeScreen() {
                       <Text style={{ color: '#9A9A9A' }}>钱包地址：</Text>
                       <Text style={{ color: '#F5FCFF' }}>bdja39dsadda242342342</Text>
                     </Flex>
-                    <TouchableOpacity activeOpacity={0.5} onPress={() => {}}>
+                    <TouchableOpacity
+                      activeOpacity={0.5}
+                      onPress={() => {
+                        copyToClipboard('dfiljsklfjasdklj;askljf');
+                        Toast.info('复制成功');
+                      }}
+                    >
                       <Image source={images.copy} style={{ height: 18, width: 18, marginRight: 10 }} />
                     </TouchableOpacity>
                   </Flex>
@@ -106,7 +113,6 @@ export default function HomeScreen() {
         </WingBlank>
         <WhiteSpace size="lg" />
         <View style={{ backgroundColor: '#fff' }}>
-          {/* <Grid data={data2} columnNum={3} hasLine={false} onPress={handlePress} itemStyle={{ fontSize: 100 }} /> */}
           <Flex style={{ flex: 1, height: 111 }}>
             {data.map((item, i) => (
               <TouchableOpacity

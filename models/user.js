@@ -1,3 +1,5 @@
+import { history } from 'umi';
+
 function fakeLoginRequest() {
   return new Promise((resolve) => {
     setTimeout(() => resolve(), 1000);
@@ -12,8 +14,8 @@ export default {
     password: '',
   },
   effects: {
-    *login({payload: {username, password}}, {call, put}) {
-      yield call(fakeLoginRequest, {username, password});
+    *login({ payload: { username, password } }, { call, put }) {
+      yield call(fakeLoginRequest, { username, password });
       yield put({
         type: 'signIn',
         payload: {
@@ -24,13 +26,19 @@ export default {
     },
   },
   reducers: {
-    signIn(state, {payload: {username, password}}) {
-      state.hasSignedIn = true;
-      state.username = '';
-      state.password = '';
+    signIn(state, { payload: { username, password } }) {
+      return {
+        ...state,
+        hasSignedIn: true,
+        username: '',
+        password: '',
+      };
     },
     signOut(state) {
-      state.hasSignedIn = false;
+      return {
+        ...state,
+        hasSignedIn: false,
+      };
     },
   },
 };

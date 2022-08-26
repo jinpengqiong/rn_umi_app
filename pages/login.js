@@ -7,32 +7,34 @@ import Loading from '../components/Loading';
 import { images } from '../utils/images';
 
 
-const LoginPage = () => {
+const LoginPage = ({ history }) => {
   const dispatch = useDispatch();
-  const [NameValue, setNameValue] = useState('');
   const [visible, setVisible] = useState(false);
 
-  const {
+  const { hasSignedIn, loading, username: _username, password: _password } = useSelector(({ user: { hasSignedIn, username, password }, loading: { effects } }) => ({
     hasSignedIn,
-    loading,
-    username: _username,
-    password: _password,
-  } = useSelector(
-    ({
-      user: {hasSignedIn, username, password},
-      loading: {effects},
-    }) => ({
-      hasSignedIn,
-      username,
-      password,
-      loading: effects['user/login'],
-    }),
-  );
+    username,
+    password,
+    loading: effects['user/login'],
+  }));
   const [username, setUsername] = useState(_username);
   const [password, setPassword] = useState(_password);
-  const [checkCode, setCheckCode] = useState('')
+  const [showPassword, setShowPassword] = useState(false);
+  const [checkCode, setCheckCode] = useState('');
 
-  function onSubmit() {
+  if (loading) {
+    return <Loading />;
+  }
+
+  if (hasSignedIn) {
+    if (history.length > 1) {
+      history.goBack();
+    } else {
+      return <Redirect to="/" />;
+    }
+  }
+
+  const onSubmit = () => {
     if (!username || !password) {
       Toast.fail('请输入账号和密码！');
       return;
@@ -44,15 +46,8 @@ const LoginPage = () => {
         password,
       },
     });
-  }
-  useEffect(() => {
-    if (loading) {
-      return <Loading />;
-    }
-    if (hasSignedIn) {
-      history.push('/');
-    }
-  }, [])
+  };
+
   return (
     <>
       <View style={styles.container}>
@@ -78,7 +73,15 @@ const LoginPage = () => {
           <Flex style={{ width: '95%', marginLeft: 20, marginRight: 50 }}>
             <Image source={images.icon_lock} style={styles.images2} />
             <View style={{ width: '90%' }}>
-              <InputItem clear value={password} onChange={setPassword} placeholder="请输入密码" extra={<Image source={images.icon_eye_nol_gray} style={styles.images2} />} />
+              <InputItem
+                type={showPassword ? 'text' : 'password'}
+                clear
+                value={password}
+                onChange={setPassword}
+                placeholder="请输入密码"
+                extra={<Image source={images.icon_eye_nol_gray} style={styles.images2} />}
+                onExtraClick={() => setShowPassword(!showPassword)}
+              />
             </View>
           </Flex>
           <WingBlank>
@@ -153,7 +156,7 @@ const LoginPage = () => {
         </ScrollView>
         <Flex style={{ paddingHorizontal: 20, width: '100%', position: 'absolute', bottom: -65 }} justify="between">
           <Button
-            style={{ height: 38, width: '45%', borderRadius: 50, backgroundColor: '#EFF0F1', color: '#B0B4C0' }}
+            style={{ height: 38, width: '45%', borderRadius: 50, backgroundColor: '#EFF0F1' }}
             onPress={() => {
               setVisible(false);
             }}
@@ -161,7 +164,7 @@ const LoginPage = () => {
             取消
           </Button>
           <Button
-            style={{ height: 38, width: '45%', borderRadius: '50%' }}
+            style={{ height: 38, width: '45%', borderRadius: 50 }}
             type="primary"
             onPress={() => {
               setVisible(false);
@@ -175,7 +178,7 @@ const LoginPage = () => {
       </Modal>
     </>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
