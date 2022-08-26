@@ -5,7 +5,7 @@ import { Icon, List, WhiteSpace, WingBlank, Button, Flex } from '@ant-design/rea
 import { Avatar } from 'react-native-paper';
 const Item = List.Item;
 
-export default function ScanScreenPage() {
+const ScanScreenPage = () => {
   const dispatch = useDispatch();
   return (
     <ScrollView style={{ backgroundColor: '#e5f4ff' }}>
@@ -15,3 +15,5 @@ export default function ScanScreenPage() {
     </ScrollView>
   );
 }
+
+export default ScanScreenPage

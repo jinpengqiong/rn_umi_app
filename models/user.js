@@ -12,6 +12,7 @@ export default {
     hasSignedIn: false,
     username: '',
     password: '',
+    hasIdentified:false
   },
   effects: {
     *login({ payload: { username, password } }, { call, put }) {

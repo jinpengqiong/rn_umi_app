@@ -6,7 +6,7 @@ import { Avatar } from 'react-native-paper';
 
 const Item = List.Item;
 
-export default function ProfileScreen() {
+const ProfileScreen = () => {
   const dispatch = useDispatch();
   const [visible, setVisible] = useState(false);
 
@@ -119,3 +119,5 @@ export default function ProfileScreen() {
     </>
   );
 }
+
+export default ProfileScreen;

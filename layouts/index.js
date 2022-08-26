@@ -3,10 +3,10 @@ import {BackButton, connect, Redirect} from 'umi';
 
 function Layout({children, hasSignedIn, route, navigation}) {
   useLayoutEffect(() => {
-    if (route.name === '/login' || route.name === '/') {
-      navigation.setOptions({headerShown: false});
+    if (route.name === '/login' || route.name === '/' || route.name === '/help') {
+      navigation.setOptions({ headerShown: false });
     } else {
-      navigation.setOptions({headerShown: true});
+      navigation.setOptions({ headerShown: true });
     }
   }, [navigation, route.name]);
 

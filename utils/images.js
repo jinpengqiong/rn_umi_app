@@ -36,4 +36,5 @@ export const images = {
   "icon_username":require('../assets/images/icon_username.png'),
   "icon_lock":require('../assets/images/icon_lock.png'),
   "icon_security":require('../assets/images/icon_security.png'),
+  "img_bg_help":require('../assets/images/img_bg_help.png'),
 }
