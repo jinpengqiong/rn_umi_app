@@ -37,4 +37,12 @@ export const images = {
   "icon_lock":require('../assets/images/icon_lock.png'),
   "icon_security":require('../assets/images/icon_security.png'),
   "img_bg_help":require('../assets/images/img_bg_help.png'),
+  "icon_arrow_nav_white":require('../assets/images/icon_arrow_nav_white.png'),
+  "icon_security1":require('../assets/images/icon_security1.png'),
+  "icon_payment":require('../assets/images/icon_payment.png'),
+  "icon_buycoins":require('../assets/images/icon_buycoins.png'),
+  "icon_selling_currency":require('../assets/images/icon_selling_currency.png'),
+  "icon_recharge":require('../assets/images/icon_recharge.png'),
+  "icon_withdrawal":require('../assets/images/icon_withdrawal.png'),
+  "icon_customer_service":require('../assets/images/icon_customer_service.png'),
 }
