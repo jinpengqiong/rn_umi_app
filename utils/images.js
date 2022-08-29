@@ -46,6 +46,7 @@ export const images = {
   "icon_withdrawal":require('../assets/images/icon_withdrawal.png'),
   "icon_customer_service":require('../assets/images/icon_customer_service.png'),
   "img_realname_01":require('../assets/images/img_realname_01.png'),
+  "img_addpay_01":require('../assets/images/img_addpay_01.png'),
   "img_addpay_02":require('../assets/images/img_addpay_02.png'),
   "img_addpay_03":require('../assets/images/img_addpay_03.png'),
   "img_buycoin_01":require('../assets/images/img_buycoin_01.png'),
