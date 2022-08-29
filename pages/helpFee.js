@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     color: '#fff',
   },
   images: {
-    height: 231,
+    height: 250,
     width: '100%',
     marginTop: 31,
   },

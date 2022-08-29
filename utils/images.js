@@ -61,4 +61,5 @@ export const images = {
   "img_transform_02":require('../assets/images/img_transform_02.png'),
   "img_transform_03":require('../assets/images/img_transform_03.png'),
   "icon_filter":require('../assets/images/icon_filter.png'),
+  "icon_filter_1":require('../assets/images/icon_filter_1.png'),
 }
