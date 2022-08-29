@@ -1,18 +1,16 @@
-import React, { useState } from 'react';
-import { useSelector, history } from 'umi';
-import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
-import { InputItem, Flex, WhiteSpace, WingBlank } from '@ant-design/react-native';
+import React from 'react';
+import { StyleSheet, Text, ScrollView, Image } from 'react-native';
+import {  Flex } from '@ant-design/react-native';
 import { images } from '../utils/images';
-import { Button } from 'react-native-paper';
 
 const AuthHelpComponent = () => {
   return (
-    <View>
+    <ScrollView>
       <Flex style={styles.container} justify="center">
         <Text style={styles.title}>实名认证</Text>
       </Flex>
       <Image source={images.img_realname_01} style={styles.images} />
-    </View>
+    </ScrollView>
   );
 };
 
@@ -34,5 +32,5 @@ const styles = StyleSheet.create({
   },
 });
 
-AuthHelpComponent.title = '实名认证';
+AuthHelpComponent.title = '客服';
 export default AuthHelpComponent;

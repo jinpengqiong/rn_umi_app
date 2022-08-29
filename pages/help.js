@@ -7,12 +7,12 @@ import { images } from '../utils/images';
 const Item = List.Item;
 const data = [
   { name: '实名认证', icon: images.icon_security1, path: '/helpAuth' },
-  { name: '添加收付款', icon: images.icon_payment, path: '/myOrder' },
-  { name: '买币', icon: images.icon_buycoins, path: '/walletRecords' },
+  { name: '添加收付款', icon: images.icon_payment, path: '/helpFee' },
+  { name: '买币', icon: images.icon_buycoins, path: '/helpBuy' },
 ];
 const data2 = [
-  { name: '买币', icon: images.icon_selling_currency, path: '/payMethods' },
-  { name: '充值', icon: images.icon_recharge, path: '/help' },
+  { name: '卖币', icon: images.icon_selling_currency, path: '/helpSale' },
+  { name: '充值', icon: images.icon_recharge, path: '/helpCharge' },
   { name: '提现', icon: images.icon_withdrawal, path: '/feedback' },
 ];
 

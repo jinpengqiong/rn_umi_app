@@ -3,16 +3,14 @@ import { StyleSheet, Text, View, Image, ScrollView } from 'react-native';
 import { Flex, WhiteSpace } from '@ant-design/react-native';
 import { images } from '../utils/images';
 
-const HelpFeeComponent = () => {
+const HelpSaleComponent = () => {
   return (
     <ScrollView>
       <Flex style={styles.container} justify="center">
-        <Text style={styles.title}>添加收付款信息</Text>
+        <Text style={styles.title}>卖币教程</Text>
       </Flex>
-        <Image source={images.img_addpay_01} style={styles.images} />
-        <Image source={images.img_addpay_02} style={styles.images} />
-        <Image source={images.img_addpay_03} style={styles.images} />
-        <WhiteSpace size='lg'/>
+      <Image source={images.img_salecoin_01} style={styles.images} />
+      <WhiteSpace size="lg" />
     </ScrollView>
   );
 };
@@ -29,11 +27,11 @@ const styles = StyleSheet.create({
     color: '#fff',
   },
   images: {
-    height: 231,
+    height: 1100,
     width: '100%',
     marginTop: 31,
   },
 });
 
-HelpFeeComponent.title = '客服';
-export default HelpFeeComponent;
+HelpSaleComponent.title = '客服';
+export default HelpSaleComponent;
