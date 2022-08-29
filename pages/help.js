@@ -13,7 +13,7 @@ const data = [
 const data2 = [
   { name: '卖币', icon: images.icon_selling_currency, path: '/helpSale' },
   { name: '充值', icon: images.icon_recharge, path: '/helpCharge' },
-  { name: '提现', icon: images.icon_withdrawal, path: '/feedback' },
+  { name: '提现', icon: images.icon_withdrawal, path: '/helpCash' },
 ];
 
 const HelpComponent = () => {

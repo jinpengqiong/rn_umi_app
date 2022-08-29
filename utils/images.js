@@ -57,4 +57,7 @@ export const images = {
   "img_withdarw_01":require('../assets/images/img_withdarw_01.png'),
   "img_withdarw_02":require('../assets/images/img_withdarw_02.png'),
   "img_withdarw_03":require('../assets/images/img_withdarw_03.png'),
+  "img_transform_01":require('../assets/images/img_transform_01.png'),
+  "img_transform_02":require('../assets/images/img_transform_02.png'),
+  "img_transform_03":require('../assets/images/img_transform_03.png'),
 }
