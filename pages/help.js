@@ -1,12 +1,12 @@
 import React from 'react';
 import { history } from 'umi';
 import { Text, View, ScrollView, StyleSheet, Image, TouchableOpacity } from 'react-native';
-import { Icon, List, WhiteSpace, WingBlank, Button, Flex } from '@ant-design/react-native';
-import { Avatar } from 'react-native-paper';
+import { Icon, List, WhiteSpace, WingBlank, Flex } from '@ant-design/react-native';
+import { Button } from 'react-native-paper';
 import { images } from '../utils/images';
 const Item = List.Item;
 const data = [
-  { name: '实名认证', icon: images.icon_security1, path: '/auth' },
+  { name: '实名认证', icon: images.icon_security1, path: '/helpAuth' },
   { name: '添加收付款', icon: images.icon_payment, path: '/myOrder' },
   { name: '买币', icon: images.icon_buycoins, path: '/walletRecords' },
 ];
@@ -68,7 +68,7 @@ const HelpComponent = () => {
           </View>
         </View>
         <WingBlank>
-          <Button onPress={() => {}} style={styles.button} icon={() => <Image source={images.icon_customer_service} style={{ height: 26, width: 26 }} />}>
+          <Button onPress={() => {}} style={styles.button} icon={() => <Image source={images.icon_customer_service} style={{ height: 14, width: 14 }} />} color="#fff" labelStyle={{ fontSize: 14 }}>
             客服
           </Button>
         </WingBlank>
@@ -80,7 +80,7 @@ const HelpComponent = () => {
         }}
         style={{ position: 'absolute', top: 50, left: 20 }}
       >
-        <Image source={images.icon_arrow_nav_white} style={{ width: 20, height: 20 }} color="#fff"/>
+        <Image source={images.icon_arrow_nav_white} style={{ width: 13, height: 13 }} />
       </TouchableOpacity>
     </>
   );
@@ -94,6 +94,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#4086F5',
     borderRadius: 10,
     height: 38,
+    color: '#fff',
+
   },
 });
 
