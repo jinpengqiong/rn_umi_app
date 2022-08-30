@@ -9,6 +9,12 @@ import { images } from '../utils/images';
 const SalesComponent = () => {
   const [value, setValue] = useState('Second');
   const [selectedOption, setSelectedOption] = useState(null);
+  const [selectedOption2, setSelectedOption2] = useState({
+    weixin: false,
+    zhifubao: false,
+    yinlian: false,
+  });
+  console.log('selectedOption2', selectedOption2)
   const radioGroupList = [
     {
       label: '拆分',
@@ -80,15 +86,36 @@ const SalesComponent = () => {
             <Flex justify="around" style={{ marginTop: 30, marginBottom: 20 }}>
               <Flex justify="center">
                 <Image source={images.icon_pay_wechat} style={{ width: 18, height: 18 }} />
-                <Checkbox.Item label="微信" status="checked" />
+                <Checkbox.Item
+                  label="微信"
+                  status={selectedOption2.weixin ? 'checked' : 'unchecked'}
+                  onPress={() => {
+                    selectedOption2.weixin = !selectedOption2.weixin;
+                    setSelectedOption2(JSON.parse(JSON.stringify(selectedOption2)));
+                  }}
+                />
               </Flex>
               <Flex justify="center">
                 <Image source={images.icon_pay_alipay} style={{ width: 18, height: 18 }} />
-                <Checkbox.Item label="支付宝" status="checked" />
+                <Checkbox.Item
+                  label="支付宝"
+                  status={selectedOption2.zhifubao ? 'checked' : 'unchecked'}
+                  onPress={() => {
+                    selectedOption2.zhifubao = !selectedOption2.zhifubao;
+                    setSelectedOption2(JSON.parse(JSON.stringify(selectedOption2)));
+                  }}
+                />
               </Flex>
               <Flex justify="center">
                 <Image source={images.icon_pay_chinabank} style={{ width: 18, height: 18 }} />
-                <Checkbox.Item label="银联" status="checked" />
+                <Checkbox.Item
+                  label="银联"
+                  status={selectedOption2.yinlian ? 'checked' : 'unchecked'}
+                  onPress={() => {
+                    selectedOption2.yinlian = !selectedOption2.yinlian;
+                    setSelectedOption2(JSON.parse(JSON.stringify(selectedOption2)));
+                  }}
+                />
               </Flex>
             </Flex>
           </WingBlank>

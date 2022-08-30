@@ -71,8 +71,9 @@ function Layout({children, hasSignedIn, route, navigation}) {
                   borderColor: '#4086F5',
                   backgroundColor: 'transparent',
                   backgroundTintColor: '#4086F5',
+                  borderTintColor: '#4086F5',
                   textColor: 'black',
-                  textTintColor:"#fff"
+                  textTintColor: '#fff',
                 }}
                 multiple={true}
                 value={interest}
