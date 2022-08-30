@@ -14,7 +14,6 @@ const SalesComponent = () => {
     zhifubao: false,
     yinlian: false,
   });
-  console.log('selectedOption2', selectedOption2)
   const radioGroupList = [
     {
       label: '拆分',

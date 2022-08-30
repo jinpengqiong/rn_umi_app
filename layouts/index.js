@@ -93,7 +93,6 @@ function Layout({children, hasSignedIn, route, navigation}) {
               >
                 <Text style={styles.text3}>取消</Text>
               </TouchableOpacity>
-
               <Button
                 type="primary"
                 style={styles.button}
@@ -115,7 +114,7 @@ const styles = StyleSheet.create({
   box: {
     borderTopLeftRadius: 50,
     borderTopRightRadius: 50,
-    height: 323,
+    height: 350,
   },
   constainer: {
     paddingVertical: 10,
