@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Link, useDispatch } from 'umi';
-import { Text, View, ScrollView, StyleSheet, Image, Clipboard } from 'react-native';
+import { Link, useDispatch, history } from 'umi';
+import { Text, View, ScrollView, StyleSheet, Image, Clipboard, TouchableOpacity } from 'react-native';
 import { Icon, List, WhiteSpace, WingBlank, Button, Flex, Modal, Toast } from '@ant-design/react-native';
 import { Avatar } from 'react-native-paper';
 
@@ -26,7 +26,14 @@ const ProfileScreen = () => {
           <Flex style={{ marginLeft: 20, marginTop: 35 }} justify="start">
             <Avatar.Icon size={41} icon="account" style={{ backgroundColor: '#84DAAB' }} />
             <Text style={{ marginLeft: 5, fontWeight: '700', fontSize: 18 }}>RocKim</Text>
-            <Icon name="edit" style={{ marginLeft: 5, fontSize: 18 }} color="#4086F5" />
+            <TouchableOpacity
+              activeOpacity={0.5}
+              onPress={() => {
+                history.push('/editProfile');
+              }}
+            >
+              <Icon name="edit" style={{ marginLeft: 5, fontSize: 18 }} color="#4086F5" />
+            </TouchableOpacity>
           </Flex>
           <Flex style={{ width: 83, height: 27, backgroundColor: '#D4EBE2', marginTop: 35, borderTopLeftRadius: 15, borderBottomLeftRadius: 15 }} justify="around">
             <Avatar.Icon size={14} icon="wallet" style={{ backgroundColor: '#489C71' }} />
@@ -37,10 +44,15 @@ const ProfileScreen = () => {
           <Link to="/verification" component={List.Item} arrow="horizontal" thumb={<Icon name="info-circle" />}>
             实名认证
           </Link>
-          <Item extra="dfiljsklfjasdklj;askljf" arrow="empty" thumb={<Icon name="setting" />} onPress={() => {
-            copyToClipboard('dfiljsklfjasdklj;askljf');
-            Toast.info('复制成功')
-          }}>
+          <Item
+            extra="dfiljsklfjasdklj;askljf"
+            arrow="empty"
+            thumb={<Icon name="setting" />}
+            onPress={() => {
+              copyToClipboard('dfiljsklfjasdklj;askljf');
+              Toast.info('复制成功');
+            }}
+          >
             钱包地址
           </Item>
           <Link to="/changePassword" component={List.Item} arrow="horizontal" thumb={<Icon name="setting" />}>
