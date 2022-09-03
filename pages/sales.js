@@ -80,7 +80,6 @@ const SalesComponent = () => {
           <View style={{ marginTop: 18, marginLeft: 15, marginRight: 15 }}>
             <Text style={{ fontSize: 17 }}>选择收款方式（可多选）</Text>
           </View>
-          {/* <RadioButton.Group onValueChange={(newValue) => setValue(newValue)} value={value}> */}
           <WingBlank size="lg">
             <Flex justify="around" style={{ marginTop: 30, marginBottom: 20 }}>
               <Flex justify="center">
@@ -118,7 +117,6 @@ const SalesComponent = () => {
               </Flex>
             </Flex>
           </WingBlank>
-          {/* </RadioButton.Group> */}
           <View style={{ paddingLeft: 10, paddingRight: 10 }}>
             <Button type="primary">出售</Button>
           </View>
