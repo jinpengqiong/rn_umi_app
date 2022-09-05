@@ -63,4 +63,8 @@ export const images = {
   "icon_filter":require('../assets/images/icon_filter.png'),
   "icon_filter_1":require('../assets/images/icon_filter_1.png'),
   "icon_arrow":require('../assets/images/icon_arrow.png'),
+  "icon_turename":require('../assets/images/icon_turename.png'),
+  "icon_wallet":require('../assets/images/icon_wallet.png'),
+  "icon_setpwd":require('../assets/images/icon_setpwd.png'),
+  "icon_setpaypwd":require('../assets/images/icon_setpaypwd.png'),
 }

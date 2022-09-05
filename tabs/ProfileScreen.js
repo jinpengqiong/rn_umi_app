@@ -3,6 +3,7 @@ import { Link, useDispatch, history } from 'umi';
 import { Text, View, ScrollView, StyleSheet, Image, Clipboard, TouchableOpacity } from 'react-native';
 import { Icon, List, WhiteSpace, WingBlank, Button, Flex, Modal, Toast } from '@ant-design/react-native';
 import { Avatar } from 'react-native-paper';
+import { images } from '../utils/images';
 
 const Item = List.Item;
 
@@ -41,13 +42,13 @@ const ProfileScreen = () => {
           </Flex>
         </Flex>
         <List style={{ marginBottom: 70 }}>
-          <Link to="/verification" component={List.Item} arrow="horizontal" thumb={<Icon name="info-circle" />}>
+          <Link to="/verification" component={List.Item} arrow="horizontal" thumb={<Image source={images.icon_turename} style={{ height: 20, width: 20, marginRight: 5 }} />}>
             实名认证
           </Link>
           <Item
             extra="dfiljsklfjasdklj;askljf"
             arrow="empty"
-            thumb={<Icon name="setting" />}
+            thumb={<Image source={images.icon_wallet} style={{ height: 20, width: 20, marginRight: 5 }} />}
             onPress={() => {
               copyToClipboard('dfiljsklfjasdklj;askljf');
               Toast.info('复制成功');
@@ -55,13 +56,13 @@ const ProfileScreen = () => {
           >
             钱包地址
           </Item>
-          <Link to="/changePassword" component={List.Item} arrow="horizontal" thumb={<Icon name="setting" />}>
+          <Link to="/changePassword" component={List.Item} arrow="horizontal" thumb={<Image source={images.icon_setpwd} style={{ height: 20, width: 20, marginRight: 5 }} />}>
             设置密码
           </Link>
-          <Link to="/setPayCode" component={List.Item} arrow="horizontal" thumb={<Icon name="setting" />}>
+          <Link to="/setPayCode" component={List.Item} arrow="horizontal" thumb={<Image source={images.icon_setpaypwd} style={{ height: 20, width: 20, marginRight: 5 }} />}>
             设置支付密码
           </Link>
-          <List.Item thumb={<Icon name="setting" />} onPress={() => setVisible(true)} arrow="horizontal">
+          <List.Item thumb={<Image source={images.icon_setpaypwd} style={{ height: 20, width: 20, marginRight: 5 }} />} onPress={() => setVisible(true)} arrow="horizontal">
             用户须知
           </List.Item>
         </List>
