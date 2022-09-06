@@ -67,4 +67,5 @@ export const images = {
   "icon_wallet":require('../assets/images/icon_wallet.png'),
   "icon_setpwd":require('../assets/images/icon_setpwd.png'),
   "icon_setpaypwd":require('../assets/images/icon_setpaypwd.png'),
+  "img_limit_nodata":require('../assets/images/img_limit_nodata.png'),
 }

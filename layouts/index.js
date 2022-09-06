@@ -29,7 +29,6 @@ function Layout({children, hasSignedIn, route, navigation}) {
   }, [navigation, route.name]);
 
   const onClose2 = () => {}
-  console.log('interest', interest)
   return (
     <>
       <BackButton>{hasSignedIn || route.name === '/login' || route.name === '/register' ? children : <Redirect to="/login" push />}</BackButton>
