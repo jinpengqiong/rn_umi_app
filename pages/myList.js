@@ -15,24 +15,24 @@ const MyListComponent = () => {
     }, 2000);
   };
   const data = [
-    // {
-    //   success: true,
-    //   user: {
-    //     username: '111111',
-    //     payWay: 'zhifubao',
-    //     price: 100.0,
-    //     avatar: 'https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png',
-    //   },
-    // },
-    // {
-    //   success: true,
-    //   user: {
-    //     username: '22222',
-    //     payWay: 'weixin',
-    //     price: 200.0,
-    //     avatar: 'https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png',
-    //   },
-    // },
+    {
+      success: true,
+      user: {
+        username: '111111',
+        payWay: 'zhifubao',
+        price: 100.0,
+        avatar: 'https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png',
+      },
+    },
+    {
+      success: true,
+      user: {
+        username: '22222',
+        payWay: 'weixin',
+        price: 200.0,
+        avatar: 'https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png',
+      },
+    },
   ];
 
   return (
@@ -46,7 +46,7 @@ const MyListComponent = () => {
         keyboardShouldPersistTaps={'handled'}
       >
         {
-          JSON.stringify(data) === [] ? (
+          JSON.stringify(data) === "[]" ? (
             <EmptyComponent />
           ) : (
           <WingBlank size="lg">

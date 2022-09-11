@@ -13,7 +13,7 @@ const data = [
 const data2 = [
   { name: '收付款信息', icon: images.collection, path: '/payMethods' },
   { name: '帮助', icon: images.help, path: '/help' },
-  { name: '客服', icon: images.customerservice, path: '/feedback' },
+  { name: '客服', icon: images.customerservice, path: '/empty' },
 ];
 
 export default function HomeScreen() {
