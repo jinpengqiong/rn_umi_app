@@ -33,7 +33,7 @@ const  IndexPage = () => {
               return <Image source={images.scan_1} style={{ position: 'absolute', bottom: 0, width: 60, height: 60, zIndex: 100000 }} />;
             },
           })}
-          component={ProfileScreen}
+          component={ScanScreenPage}
         />
         <Screen
           name="个人"
