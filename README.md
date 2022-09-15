@@ -14,5 +14,5 @@ yarn watch
 
 2. 另外打开一个terminal 运行
 ```
-yarn watch
+yarn ios
 ```
