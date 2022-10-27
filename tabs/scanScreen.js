@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View, ActionSheetIOS } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 
 export default function ScanScreenPage() {
+  const [uri, setUri] = useState(null)
   let openImagePickerAsync = async () => {
     ActionSheetIOS.showActionSheetWithOptions(
       {
@@ -38,6 +39,7 @@ export default function ScanScreenPage() {
       try {
         //异步操作
         console.log('异步操作', result);
+        setUri(result.uri);
       } catch (error) {
         console.log(error)
       }
@@ -46,9 +48,7 @@ export default function ScanScreenPage() {
 
   return (
     <View style={styles.container}>
-      {/* <Image source={{ uri: 'https://i.imgur.com/TkIrScD.png' }} style={styles.logo} />
-      <Text style={styles.instructions}>To share a photo from your phone with a friend, just press the button below!</Text> */}
-
+      {uri && <Image source={{ uri }} style={styles.logo} />}
       <TouchableOpacity onPress={openImagePickerAsync} style={styles.button}>
         <Text style={styles.buttonText}>Pick a photo</Text>
       </TouchableOpacity>
